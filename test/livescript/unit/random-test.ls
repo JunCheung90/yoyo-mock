@@ -7,7 +7,7 @@ config =
   std-dev: 0
   min: 0
   max: 0
-precision = 0.2
+precision = 0.5
 
 arr = []
 

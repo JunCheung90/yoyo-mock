@@ -9,7 +9,7 @@ config = {
   min: 0,
   max: 0
 };
-precision = 0.2;
+precision = 0.5;
 arr = [];
 can = it;
 describe('测试正态分布', function(){

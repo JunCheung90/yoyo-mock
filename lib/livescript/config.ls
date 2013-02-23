@@ -10,7 +10,7 @@ module.exports <<<
 		contacts-amount:
 			mean: 3
 			std: 0	#标准差，值越小数据越集中
-			min: 5	#正态随机出的最小值
+			min: 3	#正态随机出的最小值
 			max: 3	#正态随机出的最小值
 
 		contacts-repeat-rate:
