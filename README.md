@@ -4,7 +4,7 @@
 # 产生us1的测试数据
 
 #1函数接口
-var Mock = require('node-mock');
+var Mock = require('yoyo-mock');
 Mock.Helpers.generateFakeUsers(ua, contactsAmountConfig, contactsRepeatRateConfig, contactsSimilarRateConfig, callback);
 其中contactsAmountConfig, contactsRepeatRateConfig, contactsSimilarRateConfig都是4元对象（{mean：0, std：0, min：0, max：0}）
 具体代码见examples/node_generateSet.js
