@@ -1,9 +1,12 @@
 require! Faker: '../../index'
 require! ['should', 'async']
 
-dataNum = 1000
-mean = 0.0
-std-dev = 1.0
+dataNum = 10
+config =
+  mean: 0
+  std-dev: 0
+  min: 0
+  max: 0
 precision = 0.2
 
 arr = []
@@ -15,14 +18,14 @@ describe '测试正态分布', !->
     before !->
       generate-normal-distribution-array!
 
-  can '平均值大约为'+mean+'\n', !->
+  can '平均值大约为'+config.mean+'\n', !->
     cal-mean-value = cal-mean!
-    cal-mean-value.should.be.within mean - precision, mean + precision
+    cal-mean-value.should.be.within config.mean - precision, config.mean + precision
     console.log "计算的平均值为{#cal-mean-value}"
 
-  can '标准差大约为'+std-dev+'\n', !->
+  can '标准差大约为'+config.std-dev+'\n', !->
     cal-std-dev-value = cal-std-dev!
-    cal-std-dev-value.should.be.within std-dev - precision, std-dev + precision
+    cal-std-dev-value.should.be.within config.std-dev - precision, config.std-dev + precision
     console.log "计算的标准差为{#cal-std-dev-value}"
 
   can '落在[u+-sigma]区间的概率约为0.68，落在[u+-2*sigma]区间的概率约为0.95\n', !-> 
@@ -31,9 +34,9 @@ describe '测试正态分布', !->
     count1 = 0
     count2 = 0
     for i from 0 til dataNum
-      if (cal-mean-value - cal-std-dev-value) < arr[i] < (cal-mean-value + cal-std-dev-value)
+      if (cal-mean-value - cal-std-dev-value) <= arr[i] <= (cal-mean-value + cal-std-dev-value)
         count1++
-      if (cal-mean-value - 2*cal-std-dev-value) < arr[i] < (cal-mean-value + 2*cal-std-dev-value)
+      if (cal-mean-value - 2*cal-std-dev-value) <= arr[i] <= (cal-mean-value + 2*cal-std-dev-value)
         count2++ 
     prob1 = count1 / dataNum    
     prob2 = count2 / dataNum
@@ -44,7 +47,8 @@ describe '测试正态分布', !->
 
 generate-normal-distribution-array = !->
   for i from 0 til dataNum
-    arr ++= Faker.random.normal_distribution mean, std-dev;
+    arr ++= Faker.random.nd_random_in_range config;
+    console.log arr[i]  
 
 cal-mean = ->
   sum = 0

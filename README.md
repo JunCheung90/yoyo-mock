@@ -6,8 +6,7 @@
 #1函数接口
 var Mock = require('node-mock');
 Mock.Helpers.generateFakeUsers(ua, contactsAmountConfig, contactsRepeatRateConfig, contactsSimilarRateConfig, callback);
-其中contactsAmountConfig, contactsRepeatRateConfig, contactsSimilarRateConfig都是4元数组（[mean, std, min, max]）
-如，generateFakeUsers(10, [5, 1.0, 0, 10], [0.2, 1.0, 0.0, 0.5], [0.3, 1.0, 0.0, 0.5], function (users, fact) {});
+其中contactsAmountConfig, contactsRepeatRateConfig, contactsSimilarRateConfig都是4元对象（{mean：0, std：0, min：0, max：0}）
 具体代码见examples/node_generateSet.js
 
 #2文件接口
