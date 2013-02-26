@@ -19,5 +19,7 @@ Mock.Helpers.generateFakeUsers(ua, contactsAmountConfig, contactsRepeatRateConfi
 相关参数的配置文件见lib/livescript/config.ls
 
 #3修改历史
+
 v1.0 第一次commit，完成单个用户之间的联系人重复
 v2.0 完成多用户之间的联系人和单个用户的联系人之间都可能重复
+
