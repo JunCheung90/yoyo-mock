@@ -48,7 +48,6 @@ describe '测试正态分布', !->
 generate-normal-distribution-array = !->
   for i from 0 til dataNum
     arr ++= Faker.random.nd_random_in_range config;
-    console.log arr[i]  
 
 cal-mean = ->
   sum = 0

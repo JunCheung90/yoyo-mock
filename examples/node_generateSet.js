@@ -10,7 +10,7 @@ var cr = Config.contactsRepeatRate;
 var cs = Config.contactsSimilarRepeatRate;
 var ua = Config.userAmount;
 
-Faker.Helpers.generateFakeUsers(ua, ca, cr, cs, function (users, fact) {
+Faker.User.generateFakeUsers(ua, ca, cr, cs, function (users, fact) {
 	for (var i = 1; i <= users.length; i++) {
 		fs.writeFile('./us' + i + '.json',  JSON.stringify(users[i]), function (err, data) {
 			if (err) {
@@ -26,17 +26,17 @@ Faker.Helpers.generateFakeUsers(ua, ca, cr, cs, function (users, fact) {
 	});
 
 	// 控制台输出第一个用户的数据样式
-	var userInfo = users[0];
-	userInfo.contacts = userInfo.contacts.slice(0, 2);
-	util.puts(JSON.stringify(userInfo, null, '\t'));
-	util.puts(JSON.stringify(fact[0], null, '\t'));
+	// var userInfo = users[0];
+	// userInfo.contacts = userInfo.contacts.slice(0, 2);
+	util.puts(JSON.stringify(users, null, '\t'));
+	util.puts(JSON.stringify(fact, null, '\t'));
 });
 
 
 // 防止进程自动退出
-// require('readline').createInterface({
-// 	input: process.stdin,
-// 	output: process.stdout
-// }).question('Press enter to exit...', function () {
-// 	process.exit();
-// });
+require('readline').createInterface({
+	input: process.stdin,
+	output: process.stdout
+}).question('Press enter to exit...\n', function () {
+	process.exit();
+});

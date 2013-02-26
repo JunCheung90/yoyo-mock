@@ -55,7 +55,6 @@ generateNormalDistributionArray = function(){
   for (i$ = 0, to$ = dataNum; i$ < to$; ++i$) {
     i = i$;
     arr = arr.concat(Faker.random.nd_random_in_range(config));
-    console.log(arr[i]);
   }
 };
 calMean = function(){
