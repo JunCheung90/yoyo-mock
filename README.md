@@ -5,7 +5,7 @@
 
 #1函数接口
 var Mock = require('yoyo-mock');
-Mock.Helpers.generateFakeUsers(ua, contactsAmountConfig, contactsRepeatRateConfig, contactsSimilarRateConfig, callback);
+Mock.User.generateFakeUsers(ua, contactsAmountConfig, contactsRepeatRateConfig, contactsSimilarRateConfig, callback);
 其中contactsAmountConfig, contactsRepeatRateConfig, contactsSimilarRateConfig都是4元对象（{mean：0, std：0, min：0, max：0}）
 具体代码见examples/node_generateSet.js
 
@@ -19,7 +19,5 @@ Mock.Helpers.generateFakeUsers(ua, contactsAmountConfig, contactsRepeatRateConfi
 相关参数的配置文件见lib/livescript/config.ls
 
 #3修改历史
-
 v1.0 第一次commit，完成单个用户之间的联系人重复
 v2.0 完成多用户之间的联系人和单个用户的联系人之间都可能重复
-
