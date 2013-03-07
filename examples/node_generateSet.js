@@ -10,6 +10,7 @@ var cr = Config.contactsRepeatRate;
 var cs = Config.contactsSimilarRepeatRate;
 var ua = Config.userAmount;
 
+// https://github.com/geraldasd/yoyo/issues/1
 Faker.User.generateFakeUsers(ua, ca, cr, cs, function (users, fact) {
 	for (var i = 1; i <= users.length; i++) {
 		fs.writeFile('./us' + i + '.json',  JSON.stringify(users[i]), function (err, data) {

@@ -1,3 +1,4 @@
+# async库的学习和测试 见https://github.com/alsotang/async_demo
 require! [async, '../support/test-util']
 
 # 重定义console.log, 同时输出秒数，便于调试

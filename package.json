@@ -2,7 +2,7 @@
     "name": "yoyo-mock",
     "description": "Generate massive amounts of fake contextual data",
     "version": "0.2.0",
-    "author": "gerald",
+    "author": "geraldlrh@gmail.com",
     "repository": {
         "type": "git",
         "url": "https://github.com/geraldasd/yoyo-mock.git"

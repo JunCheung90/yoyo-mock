@@ -1,3 +1,4 @@
+# TODO：算法流程与用到的技术/框架等记录到wiki
 require! [async, './helpers', './random']
 require! Faker: '../index'
 require! config: './config'.yoyo-contact
@@ -10,7 +11,7 @@ g-contacts-similar-rate-config = null
 g-user-pool = null
 
 User =
-	# TODO: 由于callback在最后，默认参数无效
+	# TODO: 由于callback在最后，默认参数无效， 参考yoyo-sn模块sn.js的做法
 	generate-fake-users: !(user-amount, contacts-amount-config, contacts-repeat-rate-config, contacts-similar-rate-config, callback) ->
 		# 初始化全局参数
 		g-user-amount := user-amount || config.user-amount;
