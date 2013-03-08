@@ -1,4 +1,3 @@
-# TODO：算法流程与用到的技术/框架等记录到wiki
 require! [async, './helpers', './random']
 require! Faker: '../index'
 require! config: './config'.yoyo-contact
@@ -66,7 +65,7 @@ clean-some-info = (user-full-info) ->
 
 create-user = ->
 	contacts-amount = random.nd_random_in_range g-contacts-amount-config
-	helpers.shuffle	g-user-pool # 并行对数组写操作会有问题吗？应该没
+	helpers.shuffle	g-user-pool
 	if g-user-pool.length < contacts-amount
 		throw new Error "user pool is too small"
 	seed-contacts = g-user-pool.slice 0, contacts-amount
