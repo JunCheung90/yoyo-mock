@@ -13,10 +13,10 @@ User =
 	# TODO: 由于callback在最后，默认参数无效， 参考yoyo-sn模块sn.js的做法
 	generate-fake-users: !(user-amount, contacts-amount-config, contacts-repeat-rate-config, contacts-similar-rate-config, callback) ->
 		# 初始化全局参数
-		g-user-amount := user-amount || config.user-amount;
-		g-contacts-amount-config := contacts-amount-config || config.contacts-amount;
-		g-contacts-repeat-rate-config := contacts-repeat-rate-config || config.contacts-repeat-rate;
-		g-contacts-similar-rate-config := contacts-similar-rate-config || config.contacts-similar-rate;
+		g-user-amount := user-amount || config.user-amount
+		g-contacts-amount-config := contacts-amount-config || config.contacts-amount
+		g-contacts-repeat-rate-config := contacts-repeat-rate-config || config.contacts-repeat-rate
+		g-contacts-similar-rate-config := contacts-similar-rate-config || config.contacts-similar-rate
 		# 构建用户群
 		user-pool-with-full-info = create-user-pool user-amount
 		(user-pool) <-! clean-user-info user-pool-with-full-info
@@ -36,7 +36,7 @@ User =
 
 create-user-pool = (user-amount) ->
 	user-pool-with-full-info = []
-	user-pool-amount = Math.floor (user-amount / config.user-amount-radio-to-user-pool-amount);
+	user-pool-amount = Math.floor (user-amount / config.user-amount-radio-to-user-pool-amount)
 	for til user-pool-amount
 		user-pool-with-full-info.push helpers.create-YoYo-user!
 	user-pool-with-full-info

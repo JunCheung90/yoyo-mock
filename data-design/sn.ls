@@ -5,7 +5,7 @@ sn = # yoyo-mock社交平台信息
   id: 'sn-user-id'
   account-name: '张三微'
   api-key: 'xxxx' # 随机生成，固定，不会变化，客户端请求时必须带（校验）
-  updates:  # 定时更新
+  status:  # 定时更新
     * create-time: 'UTC'
       content: '微博内容测试1'
   #----------- relations ----------#
